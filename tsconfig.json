@@ -1,3 +1,20 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "importHelpers": true,
+    "paths": {
+      "*": ["src/*"],
+      "$clubhouse/*": ["src/clubhouse/*"],
+      "$components/*": ["src/clubhouse/components/*"],
+      "$constants/*": ["src/clubhouse/constants/*"],
+      "$hooks/*": ["src/clubhouse/hooks/*"],
+      "$navigation/*": ["src/clubhouse/navigation/*"],
+      "$network/*": ["src/clubhouse/network/*"],
+      "$redux/*": ["src/clubhouse/redux/*"],
+      "$dashboard/*": ["src/dashboard/*"],
+      "$settings/*": ["src/settings/*"],
+      "$tools/*": ["src/tools/*"]
+    }
+  }
 }
