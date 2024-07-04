@@ -1,5 +1,5 @@
-import {Text} from '@rneui/themed';
 import React, {Component, ErrorInfo, ReactNode} from 'react';
+import {Text} from 'react-native-paper';
 
 type TProps = {
   children: ReactNode;

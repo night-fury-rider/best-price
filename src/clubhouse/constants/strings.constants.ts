@@ -30,8 +30,8 @@ export const CLUBHOUSE = {
 export const DASHBOARD = {
   price: 'Price',
   quantity: 'Quantity',
+  rate: 'Rate',
   unit: 'Unit',
-  unitSelectionDialogTitle: 'Choose Unit',
 };
 
 export const SETTINGS = {

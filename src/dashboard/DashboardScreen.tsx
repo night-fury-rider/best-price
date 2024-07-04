@@ -1,164 +1,90 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
+
 import {
-  FlatList,
-  StyleSheet,
-  View,
-  ImageSourcePropType,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
-import {
-  FAB,
-  Icon,
-  Input,
-  ListItem,
-  Switch,
-  Text,
-  useTheme,
-} from '@rneui/themed';
-import {DASHBOARD, SETTINGS} from 'clubhouse/constants/strings.constants';
-import InputListItem from 'clubhouse/components/InputListItem';
-import Header from 'clubhouse/components/Header';
+  getInitialCards,
+  getLowestPriceCardIndices,
+  rateChanged,
+} from './DashboardService';
+import Card from '$clubhouse/components/card/Card';
+import {DASHBOARD} from '$clubhouse/constants/strings.constants';
+import {ICard} from './dashboard.types';
 
-import APP_CONFIG from '$clubhouse/constants/app.config.constants';
-import {IMarker, IUnit} from '$dashboard/dashboard.types';
-import {getMarkers} from './DashboardService';
+const DashboardScreen = () => {
+  const [cards, setCards] = useState(getInitialCards() as ICard[]);
+  const [bestPriceIndices, setBestPriceIndices] = useState([] as number[]);
 
-// TODO: Use specific type instead of any
-const DashboardScreen = ({navigation}: any) => {
-  const {theme} = useTheme();
+  const handlePriceChange = (index: number, newPrice: number) => {
+    const tmpCards = [...cards];
+    tmpCards[index].price.value = newPrice;
 
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
-  const [unit, setUnit] = useState(APP_CONFIG.units[0] as IUnit);
-  const [markers, setMarkers] = useState([] as IMarker[]);
+    let tmpRate = newPrice / tmpCards[index].quantity.value;
+    tmpRate = isFinite(tmpRate) && !isNaN(tmpRate) ? Number(tmpRate) : 0;
+    tmpCards[index].rate.value = Number(tmpRate.toFixed(2));
 
-  useEffect(() => {
-    console.log(`useEffect ----------------------------------> price: ${price}
-    quantity: ${quantity}
-    unit: ${unit}`);
-    if (price && quantity && unit) {
-      updateMarkers();
+    setCards(tmpCards);
+    if (rateChanged(getInitialCards(), tmpCards)) {
+      setBestPriceIndices(getLowestPriceCardIndices(tmpCards));
     }
-  }, [price, quantity, unit]);
-
-  const renderItem = (
-    itemLabel: string,
-    itemValue?: string,
-    editable?: boolean,
-  ) => {
-    return (
-      <InputListItem
-        itemLabel={itemLabel}
-        itemValue={itemValue}
-        editable={editable}
-        customContainerStyle={{
-          borderColor: theme.colors.background5,
-          borderWidth: 1,
-        }}
-      />
-    );
   };
 
-  const handleMainPriceChange = (amount: number) => {
-    setPrice(amount);
+  const handleQuantityChange = (index: number, newQty: number) => {
+    const tmpCards = [...cards];
+    tmpCards[index].quantity.value = newQty;
+
+    let tmpRate = tmpCards[index].price.value / newQty;
+    tmpRate = isFinite(tmpRate) && !isNaN(tmpRate) ? Number(tmpRate) : 0;
+    tmpCards[index].rate.value = Number(tmpRate.toFixed(2));
+
+    setCards(tmpCards);
+    if (rateChanged(getInitialCards(), tmpCards)) {
+      setBestPriceIndices(getLowestPriceCardIndices(tmpCards));
+    }
   };
 
-  const handleQuantityChange = (amount: number) => {
-    setQuantity(amount);
-  };
-
-  const handleUnitChange = (newUnit: IUnit) => {
-    setUnit(newUnit);
-  };
-
-  const updateMarkers = () => {
-    const result = getMarkers(
-      price,
-      quantity,
-      unit,
-      APP_CONFIG.offset,
-      APP_CONFIG.depth,
-    );
-    console.log(`New Report: ${JSON.stringify(result)}`);
-    setMarkers(result);
-  };
+  const isBestPriceCard = (cardIndex: number) =>
+    bestPriceIndices.includes(cardIndex);
 
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          backgroundColor: theme.colors.background1,
-        },
-      ]}>
-      <View>
-        <InputListItem
-          itemLabel={DASHBOARD.quantity}
-          editable={true}
-          customContainerStyle={[
-            styles.headerListItem,
-            {
-              backgroundColor: theme.colors.background2,
-            },
-          ]}
-          customInputStyle={styles.numberInput}
-          handleBlur={itemValue => {
-            handleQuantityChange(Number(itemValue) || 0);
+    <View style={styles.container}>
+      {cards.map((cardObj, index) => (
+        <Card
+          firstInputTitle={DASHBOARD.price}
+          firstInputValue={cardObj.price.value}
+          handleFirstInputChange={val => {
+            handlePriceChange(index, Number(val));
           }}
-        />
-
-        <InputListItem
-          itemLabel={DASHBOARD.unit}
-          editable={true}
-          customContainerStyle={[
-            styles.headerListItem,
-            {backgroundColor: theme.colors.background2},
-          ]}
-          options={APP_CONFIG.units}
-          optionSelectionDialogTitle={DASHBOARD.unitSelectionDialogTitle}
-          handleOptionSelection={itemValue => {
-            handleUnitChange(itemValue as IUnit);
+          secondInputTitle={DASHBOARD.quantity}
+          secondInputValue={cardObj.quantity.value}
+          handleSecondInputChange={val => {
+            handleQuantityChange(index, Number(val));
           }}
+          footerSubtitle={`${cardObj.rate.value}`}
+          footerTitle={DASHBOARD.rate}
+          customContainerStyle={
+            isBestPriceCard(index) ? styles.bestPriceCard : {}
+          }
+          key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
         />
-
-        <InputListItem
-          itemLabel={DASHBOARD.price}
-          editable={true}
-          customContainerStyle={[
-            styles.headerListItem,
-            {backgroundColor: theme.colors.background2},
-          ]}
-          customInputStyle={styles.numberInput}
-          handleBlur={itemValue => {
-            handleMainPriceChange(Number(itemValue) || 0);
-          }}
-        />
-      </View>
-      {markers?.length > 0 ? (
-        <FlatList
-          data={markers}
-          renderItem={({item}) => renderItem(item.name, `${item.value}`, false)}
-          keyExtractor={item => item?.name + item.value}
-          style={{
-            backgroundColor: theme.colors.background1,
-          }}
-          contentContainerStyle={styles.markersContainer}
-        />
-      ) : null}
+      ))}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {padding: 20, flex: 1},
-  headerListItem: {
+  container: {},
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     paddingVertical: 20,
   },
-
-  numberInput: {borderColor: 'black', borderWidth: 1},
-  markersContainer: {
-    marginTop: 20,
+  quantityInput: {},
+  priceInput: {},
+  tableContainer: {
+    marginHorizontal: 50,
+  },
+  bestPriceCard: {
+    backgroundColor: 'green',
   },
 });
 

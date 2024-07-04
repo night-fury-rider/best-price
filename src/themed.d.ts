@@ -1,6 +1,4 @@
-import '@rneui/themed';
-
-declare module '@rneui/themed' {
+declare module 'uv/themed' {
   export interface Colors {
     background1: string;
     background2: string;

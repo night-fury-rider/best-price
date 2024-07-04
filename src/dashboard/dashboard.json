@@ -1,0 +1,14 @@
+{
+  "table": {
+    "headers": [
+      {
+        "key": 1,
+        "name": "Quantity"
+      },
+      {
+        "key": 2,
+        "name": "Price"
+      }
+    ]
+  }
+}
