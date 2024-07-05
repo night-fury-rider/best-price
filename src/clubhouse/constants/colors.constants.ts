@@ -5,7 +5,7 @@ export const LIGHT_COLORS = {
   danger2: 'red',
   danger3: 'red',
 
-  success1: 'green',
+  success1: '#83f28f',
   success2: 'green',
   success3: 'green',
 

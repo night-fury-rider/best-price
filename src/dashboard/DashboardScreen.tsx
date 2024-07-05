@@ -9,6 +9,7 @@ import {
 import Card from '$clubhouse/components/card/Card';
 import {DASHBOARD} from '$clubhouse/constants/strings.constants';
 import {ICard} from './dashboard.types';
+import {LIGHT_COLORS} from 'clubhouse/constants/colors.constants';
 
 const DashboardScreen = () => {
   const [cards, setCards] = useState(getInitialCards() as ICard[]);
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   },
   bestPriceCard: {
-    backgroundColor: 'green',
+    backgroundColor: LIGHT_COLORS.success1,
   },
 });
 
