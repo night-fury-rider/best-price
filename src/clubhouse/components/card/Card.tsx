@@ -13,6 +13,7 @@ const Card = ({
   secondInputValue,
   handleSecondInputChange,
   customContainerStyle,
+  customInputStyle,
   footerSubtitle,
   footerTitle,
 }: ICardProps) => {
@@ -25,11 +26,13 @@ const Card = ({
           label={firstInputTitle}
           value={firstInputValue}
           onChangeText={text => handleFirstInputChange(text)}
+          customStyle={customInputStyle}
         />
         <InputText
           label={secondInputTitle}
           value={secondInputValue}
           onChangeText={text => handleSecondInputChange(text)}
+          customStyle={customInputStyle}
         />
 
         <View style={styles.footerContainer}>

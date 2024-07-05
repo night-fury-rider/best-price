@@ -1,4 +1,4 @@
-import {TextStyle, ViewStyle} from 'react-native';
+import {ViewStyle} from 'react-native';
 
 interface ICardProps {
   firstInputTitle: string;
@@ -8,7 +8,8 @@ interface ICardProps {
   secondInputValue: string | number;
   handleSecondInputChange: (updatedValue: string) => void;
 
-  customContainerStyle?: ViewStyle;
+  customContainerStyle?: ViewStyle[];
+  customInputStyle?: ViewStyle[];
   footerSubtitle?: string;
   footerTitle?: string;
 }

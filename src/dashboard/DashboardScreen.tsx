@@ -9,7 +9,7 @@ import {
 import Card from '$clubhouse/components/card/Card';
 import {DASHBOARD} from '$clubhouse/constants/strings.constants';
 import {ICard} from './dashboard.types';
-import {LIGHT_COLORS} from 'clubhouse/constants/colors.constants';
+import {BLUE_COLOR_THEME} from 'clubhouse/constants/colors.constants';
 
 const DashboardScreen = () => {
   const [cards, setCards] = useState(getInitialCards() as ICard[]);
@@ -62,9 +62,11 @@ const DashboardScreen = () => {
           }}
           footerSubtitle={`${cardObj.rate.value}`}
           footerTitle={DASHBOARD.rate}
-          customContainerStyle={
-            isBestPriceCard(index) ? styles.bestPriceCard : {}
-          }
+          customContainerStyle={[
+            styles.card,
+            isBestPriceCard(index) ? styles.bestPriceCard : {},
+          ]}
+          customInputStyle={[styles.inputText]}
           key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
         />
       ))}
@@ -74,18 +76,15 @@ const DashboardScreen = () => {
 
 const styles = StyleSheet.create({
   container: {},
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 20,
-  },
-  quantityInput: {},
-  priceInput: {},
-  tableContainer: {
-    marginHorizontal: 50,
-  },
+
   bestPriceCard: {
-    backgroundColor: LIGHT_COLORS.success1,
+    backgroundColor: BLUE_COLOR_THEME.success1,
+  },
+  card: {
+    backgroundColor: BLUE_COLOR_THEME.background4,
+  },
+  inputText: {
+    backgroundColor: BLUE_COLOR_THEME.background1,
   },
 });
 
