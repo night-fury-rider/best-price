@@ -9,10 +9,9 @@ This app has following features:
 ✔️ Highlight best price combination
 </pre>
 <p >
-  <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/32c0adcf-5687-4199-854d-22eb655abb3a" width="200" height="400" alt=""/> </pre>
+  <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/1469a009-af32-4314-9dad-567e8cbf5c16" width="200" height="400" alt=""/> </pre>
 </p>
 <br/><br/>
-
 
 # Technologies and Libraries Used
 
