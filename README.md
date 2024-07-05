@@ -1,12 +1,12 @@
 # price-comparator
 
-Application to compare prices of different units of same product. This app is intended to help decision making while shopping.
+Application to compare prices of different units of product. This app is intended to help decision making while shopping.
 
 
 This app has following features:
 
 <pre>
-✔️ List down all close combinations of quantity and price
+✔️ Highlight best price combination
 </pre>
 <p >
   <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/32c0adcf-5687-4199-854d-22eb655abb3a" width="200" height="400" alt=""/> </pre>
