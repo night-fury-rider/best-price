@@ -76,7 +76,6 @@ const DashboardScreen = () => {
 
 const styles = StyleSheet.create({
   container: {},
-
   bestPriceCard: {
     backgroundColor: BLUE_COLOR_THEME.success1,
   },
