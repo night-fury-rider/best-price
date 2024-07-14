@@ -55,7 +55,11 @@ yarn android
 
 # Create the release build
 
-- Make sure that `my-upload-key.keystore` file is kept under the `android/app` directory
+- Create the keystore file
+```
+keytool -genkeypair -v -storetype PKCS12 -keystore price-comparator-app-upload-key.keystore -alias price-comparator-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+- Make sure that `price-comparator-app-upload-key.keystore` file is kept under the `android/app` directory
 - Make sure that `gradle.properties` file is kept under the `.gradle` directory. In Windows, `.gradle` directory is under `C:\Users\<username>`.
 - Increment `version` in `package.json`.
 - Increment `versionMajor` or `versionMinor` or `versionPatch` in `android/app/build.gradle`
