@@ -1,4 +1,4 @@
-# price-comparator
+# Price Comparator
 
 Application to compare prices of different units of product. This app is intended to help decision making while shopping.
 
@@ -53,14 +53,25 @@ yarn android
 
   <br/><br/>
 
-# Create the release build
+# Publishing to Play Store
 
+## Release Build Setup (One Time Thing)
 - Create the keystore file
 ```
 keytool -genkeypair -v -storetype PKCS12 -keystore price-comparator-app-upload-key.keystore -alias price-comparator-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 - Make sure that `price-comparator-app-upload-key.keystore` file is kept under the `android/app` directory
-- Make sure that `gradle.properties` file is kept under the `.gradle` directory. In Windows, `.gradle` directory is under `C:\Users\<username>`.
+- Make sure that `gradle.properties` file is kept under the `.gradle` directory. In Windows, `.gradle` directory is under `C:\Users\<username>`. `gradle.properties` file should have following:
+```
+PRICE_COMPARATOR_UPLOAD_STORE_FILE=price-comparator-app-upload-key.keystore
+PRICE_COMPARATOR_UPLOAD_KEY_ALIAS=price-comparator-app-upload-key-alias
+PRICE_COMPARATOR_UPLOAD_STORE_PASSWORD=<App_Upload_Store_Password>
+PRICE_COMPARATOR_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
+```
+
+
+## Creating the release build
+  
 - Increment `version` in `package.json`.
 - Increment `versionMajor` or `versionMinor` or `versionPatch` in `android/app/build.gradle`
 - Create the apk build.
@@ -89,7 +100,7 @@ yarn run android-build
 
 <br/><br/>
 
-# Deploy the App on PlayStore
+## Deploying the release build
 
 1. Login into [Developer Console Account](https://play.google.com/console/developers)
 2. Select the app from the App list. It should open the App Dashboard.
