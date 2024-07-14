@@ -1,12 +1,12 @@
 # Price Comparator
 
-Application to compare prices of different units of product. This app is intended to help decision making while shopping.
+An application to compare prices of different units of a product. This app is intended to assist in decision-making while shopping.
 
 
-This app has following features:
+This app has the following features:
 
 <pre>
-✔️ Highlight the best price combination.
+✔️ Highlight the best price combination available.
 </pre>
 <p >
   <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/1469a009-af32-4314-9dad-567e8cbf5c16" width="200" height="400" alt=""/> </pre>
@@ -25,10 +25,10 @@ This app has following features:
 
 ## Prerequisite
 
-- Mobile with USB debugging enabled
-- Mobile and laptop are on the same wifi.
+- The mobile with USB debugging enabled
+- The mobile and laptop are on the same Wi-Fi network.
 
-## Install the app on mobile
+## Install the app on the mobile device
 
 ```
 yarn android
@@ -36,32 +36,32 @@ yarn android
 
 ## Enable Wireless hot reload
 
-- Run `adb devices` to get Mobile device name.
-- Run `ipconfig` to get the IP (v4).
-- Connect mobile to laptop via USB cable.
+- Run `adb devices` to get the mobile device name.
+- Run `ipconfig` to get the IPv4 address.
+- Connect the mobile device to the laptop via a USB cable.
 - Install the app
 
 ```
 yarn android
 ```
 
-- Disconnect mobile from USB. Metro bundler will be disconnected.
-- Shake the mobile to open the React Native Dev menu. Select Settings. Open Debug server host & port for device.
-- Enter IP v4 (from step 1) and port number (Generally 8081). Ex. `112.128.123.19:8081`
+- Disconnect the mobile from USB. Metro Bundler will be disconnected.
+- Shake the mobile to open the React Native Dev menu. Select Settings. Open "Debug server host & port for device."
+- Enter IPv4 (from step 1) and port number (usually 8081), e.g., 112.128.123.19:8081.
 - Shake the mobile to open the React Native Dev menu .
-- Select Reload. Now hot reload should work.
+- Select "Reload." Hot reload should now work.
 
   <br/><br/>
 
 # Publishing to Play Store
 
-## Release Build Setup (One Time Thing)
+## Release Build Setup (One-Time Setup)
 - Create the keystore file
 ```
 keytool -genkeypair -v -storetype PKCS12 -keystore price-comparator-app-upload-key.keystore -alias price-comparator-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
-- Make sure that `price-comparator-app-upload-key.keystore` file is kept under the `android/app` directory
-- Make sure that `gradle.properties` file is kept under the `.gradle` directory. In Windows, `.gradle` directory is under `C:\Users\<username>`. `gradle.properties` file should have following:
+- Ensure that the price-comparator-app-upload-key.keystore file is located in the android/app directory.
+- Ensure that the gradle.properties file is located in the .gradle directory. On Windows, the .gradle directory is typically found under C:\Users\<username>. The gradle.properties file should contain the following:
 ```
 PRICE_COMPARATOR_UPLOAD_STORE_FILE=price-comparator-app-upload-key.keystore
 PRICE_COMPARATOR_UPLOAD_KEY_ALIAS=price-comparator-app-upload-key-alias
@@ -73,21 +73,21 @@ PRICE_COMPARATOR_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
 ## Creating the release build
   
 - Increment `version` in `package.json`.
-- Increment `versionMajor` or `versionMinor` or `versionPatch` in `android/app/build.gradle`
-- Create the apk build.
+- Increment `versionMajor`, `versionMinor`, or `versionPatch` in `android/app/build.gradle`.
+- Create the APK build.
 
 ```
 yarn run android-build-apk
 ```
 
-- Uninstall the app from device (from work profile as well if available). Connect the device using USB.
-- Install the apk file onto device
+- Uninstall the app from the device (including from the work profile if available). Connect the device using USB.
+- Install the APK file onto device
 
 ```
 adb -s <device_name> install android/app/build/outputs/apk/release/app-release.apk
 ```
 
-- Complete the sanity testing and capture the screenshots.
+- Complete the sanity testing and capture screenshots.
 - Update the screenshots in this README.
 - Capture the home screen screenshot on emulator with Nexus_7_API_33.
 - Capture the home screen screenshot on emulator with Nexus_10_API_33.
@@ -100,11 +100,11 @@ yarn run android-build
 
 <br/><br/>
 
-## Deploying the release build
+## Deploying the Release Build
 
-1. Login into [Developer Console Account](https://play.google.com/console/developers)
-2. Select the app from the App list. It should open the App Dashboard.
-3. Select `Production` (which is under `Release`) from the sidebar.
-4. Click on `Create new release` which is on the right top. It would open `Create production release`.
+1. Log in to your [Developer Console Account](https://play.google.com/console/developers)
+2. Select the app from the App list. This action should open the App Dashboard.
+3. From the sidebar, select `Production` (under `Release`).
+4. Click on `Create new release` located in the top right corner. This action will open `Create production release`.
 5. Upload the build file and follow the instructions.
    <br/><br/>
