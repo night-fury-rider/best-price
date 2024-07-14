@@ -91,9 +91,9 @@ android {
         release {
             if (project.hasProperty('PRICE_COMPARATOR_UPLOAD_STORE_FILE')) {
                 storeFile file(PRICE_COMPARATOR_UPLOAD_STORE_FILE)
-                storePassword MYAPP_UPLOAD_STORE_PASSWORD
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS
-                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+                storePassword PRICE_COMPARATOR_UPLOAD_STORE_PASSWORD
+                keyAlias PRICE_COMPARATOR_UPLOAD_KEY_ALIAS
+                keyPassword PRICE_COMPARATOR_UPLOAD_KEY_PASSWORD
             }
         }
     }
