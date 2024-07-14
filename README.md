@@ -6,7 +6,7 @@ Application to compare prices of different units of product. This app is intende
 This app has following features:
 
 <pre>
-✔️ Highlight best price combination
+✔️ Highlight the best price combination.
 </pre>
 <p >
   <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/1469a009-af32-4314-9dad-567e8cbf5c16" width="200" height="400" alt=""/> </pre>
