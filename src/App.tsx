@@ -1,5 +1,5 @@
 import React from 'react';
-import {BottomNavigation} from 'react-native-paper';
+import {BottomNavigation, useTheme} from 'react-native-paper';
 
 import ErrorBoundary from '$clubhouse/components/ErrorBoundary';
 import StorageService from '$clubhouse/services/StorageService';
@@ -11,6 +11,8 @@ import {BLUE_COLOR_THEME} from 'clubhouse/constants/colors.constants';
 StorageService.init();
 
 function App() {
+  const theme = useTheme();
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
@@ -41,8 +43,16 @@ function App() {
           navigationState={{index, routes}}
           onIndexChange={setIndex}
           renderScene={renderScene}
-          barStyle={{backgroundColor: BLUE_COLOR_THEME.background4}}
-          activeIndicatorStyle={{backgroundColor: BLUE_COLOR_THEME.background3}}
+          barStyle={{
+            backgroundColor: theme.dark
+              ? theme.colors.inverseOnSurface
+              : BLUE_COLOR_THEME.background4,
+          }}
+          activeIndicatorStyle={{
+            backgroundColor: theme.dark
+              ? theme.colors.surface
+              : BLUE_COLOR_THEME.background3,
+          }}
         />
       </SafeAreaProvider>
     </ErrorBoundary>

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {useTheme} from 'react-native-paper';
 
 import {
   getInitialCards,
@@ -9,9 +10,11 @@ import {
 import Card from '$clubhouse/components/card/Card';
 import {DASHBOARD} from '$clubhouse/constants/strings.constants';
 import {ICard} from './dashboard.types';
-import {BLUE_COLOR_THEME} from 'clubhouse/constants/colors.constants';
+import {BLUE_COLOR_THEME} from '$clubhouse/constants/colors.constants';
 
 const DashboardScreen = () => {
+  const theme = useTheme();
+
   const [cards, setCards] = useState(getInitialCards() as ICard[]);
   const [bestPriceIndices, setBestPriceIndices] = useState([] as number[]);
 
@@ -47,7 +50,7 @@ const DashboardScreen = () => {
     bestPriceIndices.includes(cardIndex);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: theme.colors.surface}]}>
       {cards.map((cardObj, index) => (
         <Card
           firstInputTitle={DASHBOARD.price}
@@ -63,10 +66,23 @@ const DashboardScreen = () => {
           footerSubtitle={`${cardObj.rate.value}`}
           footerTitle={DASHBOARD.rate}
           customContainerStyle={[
-            styles.card,
-            isBestPriceCard(index) ? styles.bestPriceCard : {},
+            {
+              backgroundColor: theme.dark
+                ? theme.colors.onSurface
+                : BLUE_COLOR_THEME.background4,
+              elevation: 1,
+            },
+            isBestPriceCard(index)
+              ? {backgroundColor: theme.colors.inversePrimary}
+              : {},
           ]}
-          customInputStyle={[styles.inputText]}
+          customInputStyle={[
+            {
+              backgroundColor: theme.dark
+                ? theme.colors.surfaceVariant
+                : BLUE_COLOR_THEME.background1,
+            },
+          ]}
           key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
         />
       ))}
@@ -76,15 +92,6 @@ const DashboardScreen = () => {
 
 const styles = StyleSheet.create({
   container: {},
-  bestPriceCard: {
-    backgroundColor: BLUE_COLOR_THEME.success1,
-  },
-  card: {
-    backgroundColor: BLUE_COLOR_THEME.background4,
-  },
-  inputText: {
-    backgroundColor: BLUE_COLOR_THEME.background1,
-  },
 });
 
 export default DashboardScreen;
