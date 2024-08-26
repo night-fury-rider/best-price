@@ -2,7 +2,6 @@
 
 An application to compare prices of different units of a product. This app is intended to assist in decision-making while shopping.
 
-
 This app has the following features:
 
 <pre>
@@ -56,12 +55,16 @@ yarn android
 # Publishing to Play Store
 
 ## Release Build Setup (One-Time Setup)
+
 - Create the keystore file
+
 ```
 keytool -genkeypair -v -storetype PKCS12 -keystore price-comparator-app-upload-key.keystore -alias price-comparator-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
+
 - Ensure that the price-comparator-app-upload-key.keystore file is located in the android/app directory.
 - Ensure that the gradle.properties file is located in the .gradle directory. On Windows, the .gradle directory is typically found under C:\Users\<username>. The gradle.properties file should contain the following:
+
 ```
 PRICE_COMPARATOR_UPLOAD_STORE_FILE=price-comparator-app-upload-key.keystore
 PRICE_COMPARATOR_UPLOAD_KEY_ALIAS=price-comparator-app-upload-key-alias
@@ -69,9 +72,8 @@ PRICE_COMPARATOR_UPLOAD_STORE_PASSWORD=<App_Upload_Store_Password>
 PRICE_COMPARATOR_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
 ```
 
-
 ## Creating the release build
-  
+
 - Increment `version` in `package.json`.
 - Increment `versionMajor`, `versionMinor`, or `versionPatch` in `android/app/build.gradle`.
 - Create the APK build.
