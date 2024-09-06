@@ -16,7 +16,7 @@ This app has the following features:
 
 - [React Native 0.72.4](https://reactnative.dev/)
 - [React 18.2.0](https://reactjs.org/)
-- [React Native Elements 0.0.0-edge.2](https://reactnativeelements.com/)
+- [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
 
   <br/><br/>
 
