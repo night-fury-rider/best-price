@@ -8,8 +8,9 @@ This app has the following features:
 ✔️ Highlight the best price combination available.
 </pre>
 <p >
-  <pre><img src="https://github.com/user-attachments/assets/3277c097-3a85-46ac-8d4f-ae4e5836f9ca" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/d98021f2-94af-4322-b451-4cd6f8ddad99" width="200" height="400" alt=""/></pre>
-</p> 
+  <pre><img src="https://github.com/user-attachments/assets/ea89010f-3616-44a9-8c0a-612675a7578c" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/d98021f2-94af-4322-b451-4cd6f8ddad99" width="200" height="400" alt=""/></pre>
+</p>
+
 ***
 
 # Technologies and Libraries Used
@@ -45,9 +46,9 @@ yarn android
 ```
 
 - Disconnect the mobile from USB. Metro Bundler will be disconnected.
-- Shake the mobile to open the React Native Dev menu. Select Settings. Open "Debug server host & port for device."
+- Shake the mobile to open the React Native Dev menu. Select Settings. Open `Debug server host & port for device.`
 - Enter IPv4 (from step 1) and port number (usually 8081), e.g., 112.128.123.19:8081.
-- Shake the mobile to open the React Native Dev menu .
+- Shake the mobile to open the React Native Dev menu.
 - Select "Reload." Hot reload should now work.
 
 ***
