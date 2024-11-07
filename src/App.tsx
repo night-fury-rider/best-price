@@ -1,5 +1,5 @@
 import React from 'react';
-import {BottomNavigation, useTheme} from 'react-native-paper';
+import {Appbar, BottomNavigation, useTheme} from 'react-native-paper';
 
 import ErrorBoundary from '$clubhouse/components/ErrorBoundary';
 import StorageService from '$clubhouse/services/StorageService';
@@ -7,6 +7,7 @@ import DashboardScreen from 'dashboard/DashboardScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SettingsScreen from '$settings/SettingsScreen';
 import {BLUE_COLOR_THEME} from 'clubhouse/constants/colors.constants';
+import {SETTINGS} from '$clubhouse/constants/strings.constants';
 
 StorageService.init();
 
@@ -21,15 +22,25 @@ function App() {
       focusedIcon: 'currency-inr',
       unfocusedIcon: 'currency-inr',
     },
-    // TODO/Note: If we want to add settings tab, uncomment code below
-    /* ,
     {
       key: 'settings',
       title: 'Settings',
       focusedIcon: 'wrench',
       unfocusedIcon: 'wrench-outline',
-    }, */
+    },
   ]);
+
+  const renderAppBar = () => {
+    // Only show Appbar for Settings Screen
+    if (index === routes.length - 1) {
+      return (
+        <Appbar.Header>
+          <Appbar.Content title={SETTINGS.title} />
+        </Appbar.Header>
+      );
+    }
+    return null; // Don't render Appbar for other screens
+  };
 
   const renderScene = BottomNavigation.SceneMap({
     dashboard: DashboardScreen,
@@ -39,6 +50,7 @@ function App() {
   return (
     <ErrorBoundary>
       <SafeAreaProvider>
+        {renderAppBar()}
         <BottomNavigation
           navigationState={{index, routes}}
           onIndexChange={setIndex}

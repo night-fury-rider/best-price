@@ -7926,6 +7926,7 @@ __metadata:
     prettier: "npm:2.8.8"
     react: "npm:18.2.0"
     react-native: "npm:0.73.4"
+    react-native-device-info: "npm:10.12.0"
     react-native-mmkv: "npm:2.10.2"
     react-native-paper: "npm:5.12.3"
     react-native-safe-area-context: "npm:4.10.4"
@@ -8055,6 +8056,15 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 10c0/2bdb6b93fbb1820b024b496042cce405c57e2f85e777c9aabd55f9b26d145408f9f74f5934676ffdc46f3dcff656d78413a6e43968e7b3f92eea35b3052e9053
+  languageName: node
+  linkType: hard
+
+"react-native-device-info@npm:10.12.0":
+  version: 10.12.0
+  resolution: "react-native-device-info@npm:10.12.0"
+  peerDependencies:
+    react-native: "*"
+  checksum: 10c0/90297ab8365d7da8ea2900ed032ce81b809efe5de3733a692bc50dae1dcfb3e5df041c976ab38a4bf831d855be5f88f957fbbf5f84bc5deb352a8ef61ceb1f5c
   languageName: node
   linkType: hard
 

@@ -1,56 +1,69 @@
 // This file is inteneded to contain all theming (custom fonts, coloring, dark mode, light mode etc.) related stuff in this file.
+// Theme contains colors, fonts etc.
 
-import {StyleSheet} from 'react-native';
+import {Appearance} from 'react-native';
 
 import {
   BLUE_COLOR_THEME,
+  DARK_BLUE_COLOR_THEME,
+  DARK_ORANGE_COLOR_THEME,
   ORANGE_COLOR_THEME,
 } from '$clubhouse/constants/colors.constants';
+import {COMMON} from '$clubhouse/constants/strings.constants';
+import {DefaultTheme, MD3DarkTheme, MD3LightTheme} from 'react-native-paper';
+import {ThemeProp} from 'react-native-paper/lib/typescript/types';
 
-const styles = StyleSheet.create({
-  normalFont: {
-    fontFamily: 'IBMPlexSerif',
-  },
-  boldFont: {
-    fontFamily: 'IBMPlexSerif-Bold',
-    fontWeight: '600',
-  },
-  boldItalicFont: {
-    fontFamily: 'IBMPlexSerif-BoldItalic',
-    fontWeight: '600',
-  },
-  centerAlign: {
-    textAlign: 'center',
-  },
-});
+const getDefaultTheme = (themeName = COMMON.colorScheme.light as ThemeProp) => {
+  const lightTheme = {
+    ...DefaultTheme,
+    ...MD3LightTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      ...MD3LightTheme.colors,
+    },
+  };
 
-// Keep all font family info in this function only
-const getTheme = (selectedColorThemeIndex: number) => {
-  let selectedLightColors;
+  const darkTheme = {
+    ...MD3DarkTheme,
+    colors: {
+      ...MD3DarkTheme.colors,
+    },
+  };
+
+  return themeName === COMMON.colorScheme.light ? lightTheme : darkTheme;
+};
+
+const getCustomThemeColors = (
+  themeName = COMMON.colorScheme.light as ThemeProp,
+  selectedColorThemeIndex = 0,
+) => {
   switch (selectedColorThemeIndex) {
     case 1:
-      selectedLightColors = ORANGE_COLOR_THEME;
-      break;
+      return themeName === COMMON.colorScheme.light
+        ? ORANGE_COLOR_THEME
+        : DARK_ORANGE_COLOR_THEME;
 
     case 0:
     default:
-      selectedLightColors = BLUE_COLOR_THEME;
+      return themeName === COMMON.colorScheme.light
+        ? BLUE_COLOR_THEME
+        : DARK_BLUE_COLOR_THEME;
   }
-  const theme = {
-    mode: 'light',
-    lightColors: {},
-    darkColors: {},
+};
+
+const isDarkModeON = () =>
+  Appearance.getColorScheme() === COMMON.colorScheme.dark;
+
+const getTheme = (
+  themeName = COMMON.colorScheme.light as ThemeProp,
+  selectedColorThemeIndex = 0,
+): ThemeProp => {
+  let customTheme = getDefaultTheme(themeName);
+  customTheme.colors = {
+    ...customTheme.colors,
+    ...getCustomThemeColors(themeName, selectedColorThemeIndex),
   };
-
-  return theme;
+  return customTheme;
 };
 
-const getColors = (selectedColorThemeIndex: number) => {
-  const theme = getTheme(selectedColorThemeIndex);
-  if (theme.mode === 'light') {
-    return theme.lightColors;
-  }
-  return theme.darkColors;
-};
-
-export {getTheme, getColors};
+export {getTheme, isDarkModeON};
