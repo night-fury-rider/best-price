@@ -8,9 +8,9 @@ This app has the following features:
 ✔️ Highlight the best price combination available.
 </pre>
 <p >
-  <pre><img src="https://github.com/night-fury-rider/price-comparator/assets/5191208/1469a009-af32-4314-9dad-567e8cbf5c16" width="200" height="400" alt=""/> </pre>
-</p>
-<br/><br/>
+  <pre><img src="https://github.com/user-attachments/assets/3277c097-3a85-46ac-8d4f-ae4e5836f9ca" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/d98021f2-94af-4322-b451-4cd6f8ddad99" width="200" height="400" alt=""/></pre>
+</p> 
+***
 
 # Technologies and Libraries Used
 
@@ -18,7 +18,7 @@ This app has the following features:
 - [React 18.2.0](https://reactjs.org/)
 - [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
 
-  <br/><br/>
+***
 
 # Getting Started
 
@@ -50,7 +50,7 @@ yarn android
 - Shake the mobile to open the React Native Dev menu .
 - Select "Reload." Hot reload should now work.
 
-  <br/><br/>
+***
 
 # Publishing to Play Store
 
@@ -100,7 +100,7 @@ adb -s <device_name> install android/app/build/outputs/apk/release/app-release.a
 yarn run android-build
 ```
 
-<br/><br/>
+***
 
 ## Deploying the Release Build
 
@@ -109,4 +109,3 @@ yarn run android-build
 3. From the sidebar, select `Production` (under `Release`).
 4. Click on `Create new release` located in the top right corner. This action will open `Create production release`.
 5. Upload the build file and follow the instructions.
-   <br/><br/>
