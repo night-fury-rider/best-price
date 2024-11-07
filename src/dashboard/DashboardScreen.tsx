@@ -10,7 +10,10 @@ import {
 import Card from '$clubhouse/components/card/Card';
 import {DASHBOARD} from '$clubhouse/constants/strings.constants';
 import {ICard} from './dashboard.types';
-import {BLUE_COLOR_THEME} from '$clubhouse/constants/colors.constants';
+import {
+  BLUE_COLOR_THEME,
+  DARK_BLUE_COLOR_THEME,
+} from '$clubhouse/constants/colors.constants';
 
 const DashboardScreen = () => {
   const theme = useTheme();
@@ -68,12 +71,16 @@ const DashboardScreen = () => {
           customContainerStyle={[
             {
               backgroundColor: theme.dark
-                ? theme.colors.onSurface
+                ? theme.colors.surface
                 : BLUE_COLOR_THEME.background4,
               elevation: 1,
             },
             isBestPriceCard(index)
-              ? {backgroundColor: theme.colors.inversePrimary}
+              ? {
+                  backgroundColor: theme.dark
+                    ? DARK_BLUE_COLOR_THEME.background9
+                    : BLUE_COLOR_THEME.background9,
+                }
               : {},
           ]}
           customInputStyle={[

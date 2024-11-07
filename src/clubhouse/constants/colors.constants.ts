@@ -38,6 +38,7 @@ export const BLUE_COLOR_THEME = {
   background7: '#f8f9fe', // Add/Edit Item --> Background color
 
   background8: '#f0f4ff', // Item Details --> Tile Background color
+  background9: '#4A90E2',
 
   text1: '#1e1b16', // Main Text color
 };
@@ -91,6 +92,7 @@ export const DARK_COLORS = {
 
 export const DARK_BLUE_COLOR_THEME = {
   ...DARK_COLORS,
+  background9: '#4E2A2A',
 };
 
 export const DARK_ORANGE_COLOR_THEME = {
