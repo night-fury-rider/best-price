@@ -1,6 +1,6 @@
-# Price Comparator
+# Best Price
 
-An application to compare prices of different units of a product. This app is intended to assist in decision-making while shopping.
+It is a shopping app that helps users find the best deals by comparing prices for the same product in different volumes or quantities. Whether you're buying a single item, a bulk pack, or a larger size, the app quickly shows you where you can get the best price per unit.
 
 This app has the following features:
 
