@@ -55,51 +55,7 @@ yarn android
 
 # Publishing to Play Store
 
-## Release Build Setup (One-Time Setup)
-
-- Create the keystore file
-
-```
-keytool -genkeypair -v -storetype PKCS12 -keystore best-price-app-upload-key.keystore -alias best-price-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
-```
-
-- Ensure that the best-price-app-upload-key.keystore file is located in the android/app directory.
-- Ensure that the gradle.properties file is located in the .gradle directory. On Windows, the .gradle directory is typically found under C:\Users\<username>. The gradle.properties file should contain the following:
-
-```
-BEST_PRICE_UPLOAD_STORE_FILE=best-price-app-upload-key.keystore
-BEST_PRICE_UPLOAD_KEY_ALIAS=best-price-app-upload-key-alias
-BEST_PRICE_UPLOAD_STORE_PASSWORD=<App_Upload_Store_Password>
-BEST_PRICE_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
-```
-
-## Creating the release build
-
-- Increment `version` in `package.json`.
-- Increment `versionMajor`, `versionMinor`, or `versionPatch` in `android/app/build.gradle`.
-- Create the APK build.
-
-```
-yarn run android-build-apk
-```
-
-- Uninstall the app from the device (including from the work profile if available). Connect the device using USB.
-- Install the APK file onto device
-
-```
-adb -s <device_name> install android/app/build/outputs/apk/release/app-release.apk
-```
-
-- Complete the sanity testing and capture screenshots.
-- Update the screenshots in this README.
-- Capture the home screen screenshot on emulator with Nexus_7_API_33.
-- Capture the home screen screenshot on emulator with Nexus_10_API_33.
-- Create a [release on Github](https://github.com/night-fury-rider/best-price/releases). Use [Github filter](https://github.com/night-fury-rider/best-price/compare/v0.0.1...main) for extracting data for release notes.
-- Create the release build (aab build).
-
-```
-yarn run android-build
-```
+https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
 
 ---
 
