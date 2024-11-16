@@ -11,7 +11,7 @@ This app has the following features:
   <pre><img src="https://github.com/user-attachments/assets/ea89010f-3616-44a9-8c0a-612675a7578c" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/d98021f2-94af-4322-b451-4cd6f8ddad99" width="200" height="400" alt=""/></pre>
 </p>
 
-***
+---
 
 # Technologies and Libraries Used
 
@@ -19,7 +19,7 @@ This app has the following features:
 - [React 18.2.0](https://reactjs.org/)
 - [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
 
-***
+---
 
 # Getting Started
 
@@ -51,7 +51,7 @@ yarn android
 - Shake the mobile to open the React Native Dev menu.
 - Select "Reload." Hot reload should now work.
 
-***
+---
 
 # Publishing to Play Store
 
@@ -60,17 +60,17 @@ yarn android
 - Create the keystore file
 
 ```
-keytool -genkeypair -v -storetype PKCS12 -keystore price-comparator-app-upload-key.keystore -alias price-comparator-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkeypair -v -storetype PKCS12 -keystore best-price-app-upload-key.keystore -alias best-price-app-upload-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-- Ensure that the price-comparator-app-upload-key.keystore file is located in the android/app directory.
+- Ensure that the best-price-app-upload-key.keystore file is located in the android/app directory.
 - Ensure that the gradle.properties file is located in the .gradle directory. On Windows, the .gradle directory is typically found under C:\Users\<username>. The gradle.properties file should contain the following:
 
 ```
-PRICE_COMPARATOR_UPLOAD_STORE_FILE=price-comparator-app-upload-key.keystore
-PRICE_COMPARATOR_UPLOAD_KEY_ALIAS=price-comparator-app-upload-key-alias
-PRICE_COMPARATOR_UPLOAD_STORE_PASSWORD=<App_Upload_Store_Password>
-PRICE_COMPARATOR_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
+BEST_PRICE_UPLOAD_STORE_FILE=best-price-app-upload-key.keystore
+BEST_PRICE_UPLOAD_KEY_ALIAS=best-price-app-upload-key-alias
+BEST_PRICE_UPLOAD_STORE_PASSWORD=<App_Upload_Store_Password>
+BEST_PRICE_UPLOAD_KEY_PASSWORD=<App_Upload_Key_Password>
 ```
 
 ## Creating the release build
@@ -94,14 +94,14 @@ adb -s <device_name> install android/app/build/outputs/apk/release/app-release.a
 - Update the screenshots in this README.
 - Capture the home screen screenshot on emulator with Nexus_7_API_33.
 - Capture the home screen screenshot on emulator with Nexus_10_API_33.
-- Create a [release on Github](https://github.com/night-fury-rider/price-comparator/releases). Use [Github filter](https://github.com/night-fury-rider/price-comparator/compare/v0.0.1...main) for extracting data for release notes.
+- Create a [release on Github](https://github.com/night-fury-rider/best-price/releases). Use [Github filter](https://github.com/night-fury-rider/best-price/compare/v0.0.1...main) for extracting data for release notes.
 - Create the release build (aab build).
 
 ```
 yarn run android-build
 ```
 
-***
+---
 
 ## Deploying the Release Build
 

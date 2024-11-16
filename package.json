@@ -1,5 +1,5 @@
 {
-  "name": "price-comparator",
+  "name": "best-price",
   "version": "0.0.3",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "1.9.7",
     "@types/react-native-vector-icons": "6.4.15",
     "@uv-tech/util": "1.0.11",
+    "patch-package": "8.0.0",
     "react": "18.2.0",
     "react-native": "0.73.4",
     "react-native-device-info": "10.12.0",
