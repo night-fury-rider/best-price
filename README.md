@@ -60,9 +60,4 @@ https://github.com/night-fury-rider/react-native-template/wiki/Create-the-releas
 ---
 
 ## Deploying the Release Build
-
-1. Log in to your [Developer Console Account](https://play.google.com/console/developers)
-2. Select the app from the App list. This action should open the App Dashboard.
-3. From the sidebar, select `Production` (under `Release`).
-4. Click on `Create new release` located in the top right corner. This action will open `Create production release`.
-5. Upload the build file and follow the instructions.
+https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
