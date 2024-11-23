@@ -7,13 +7,13 @@ import {
   getLowestPriceCardIndices,
   rateChanged,
 } from './DashboardService';
-import Card from '$clubhouse/components/card/Card';
-import {DASHBOARD} from '$clubhouse/constants/strings.constants';
+import Card from '$common/components/card/Card';
+import {DASHBOARD} from '$common/constants/strings.constants';
 import {ICard} from './dashboard.types';
 import {
   BLUE_COLOR_THEME,
   DARK_BLUE_COLOR_THEME,
-} from '$clubhouse/constants/colors.constants';
+} from '$common/constants/colors.constants';
 
 const DashboardScreen = () => {
   const theme = useTheme();

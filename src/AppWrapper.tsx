@@ -5,9 +5,9 @@ import {Appearance} from 'react-native';
 import {Provider} from 'react-redux';
 
 import App from 'App';
-import {store} from '$clubhouse/redux/store';
-import LoggerService from '$clubhouse/services/LoggerService';
-import {getTheme} from '$clubhouse/services/ThemeService';
+import {store} from '$common/redux/store';
+import LoggerService from '$common/services/LoggerService';
+import {getTheme} from '$common/services/ThemeService';
 
 const AppWrapper = () => {
   const [colorScheme, setColorScheme] = useState(Appearance.getColorScheme());

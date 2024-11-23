@@ -2,8 +2,8 @@ import {StyleSheet, View} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {List, Divider, useTheme} from 'react-native-paper';
 
-import Badge from '$clubhouse/components/Badge';
-import {SETTINGS} from '$clubhouse/constants/strings.constants';
+import Badge from '$common/components/Badge';
+import {SETTINGS} from '$common/constants/strings.constants';
 
 const SettingsScreen = () => {
   const theme = useTheme();

@@ -1,8 +1,8 @@
 import {configureStore, createListenerMiddleware} from '@reduxjs/toolkit';
 
-import {DASHBOARD} from '$clubhouse/constants/strings.constants';
-import LoggerService from '$clubhouse/services/LoggerService';
-import StorageService from '$clubhouse/services/StorageService';
+import {DASHBOARD} from '$common/constants/strings.constants';
+import LoggerService from '$common/services/LoggerService';
+import StorageService from '$common/services/StorageService';
 import dashboardSlice, {setContacts} from '$dashboard/dashboardSlice';
 
 const listenerMiddleware = createListenerMiddleware();

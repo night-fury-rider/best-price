@@ -1,13 +1,13 @@
 import React from 'react';
 import {Appbar, BottomNavigation, useTheme} from 'react-native-paper';
 
-import ErrorBoundary from '$clubhouse/components/ErrorBoundary';
-import StorageService from '$clubhouse/services/StorageService';
+import ErrorBoundary from '$common/components/ErrorBoundary';
+import StorageService from '$common/services/StorageService';
 import DashboardScreen from 'dashboard/DashboardScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SettingsScreen from '$settings/SettingsScreen';
-import {BLUE_COLOR_THEME} from 'clubhouse/constants/colors.constants';
-import {SETTINGS} from '$clubhouse/constants/strings.constants';
+import {BLUE_COLOR_THEME} from 'common/constants/colors.constants';
+import {SETTINGS} from '$common/constants/strings.constants';
 
 StorageService.init();
 

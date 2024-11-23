@@ -2,15 +2,15 @@
 
 import {Linking, Platform} from 'react-native';
 
-import LoggerService from '$clubhouse/services/LoggerService';
-import {CLUBHOUSE} from '$clubhouse/constants/strings.constants';
+import LoggerService from '$common/services/LoggerService';
+import {common} from '$common/constants/strings.constants';
 
 const isAndroid = () => Platform.OS === 'android';
 const isIOS = () => Platform.OS === 'ios';
 
 const makeAudioCall = (phoneNumber?: string) => {
   if (typeof phoneNumber === 'undefined') {
-    LoggerService.warn(CLUBHOUSE.errorsMsg.phoneNotAvailable);
+    LoggerService.warn(common.errorsMsg.phoneNotAvailable);
     return;
   }
   openPhoneClient('audio', phoneNumber);
@@ -28,7 +28,7 @@ const openPhoneClient = (callType: string, phoneNo: string) => {
 
 const sendTextMessage = (phoneNo?: string) => {
   if (typeof phoneNo === 'undefined') {
-    LoggerService.warn(CLUBHOUSE.errorsMsg.phoneNotAvailable);
+    LoggerService.warn(common.errorsMsg.phoneNotAvailable);
     return;
   }
   openMessageClient('text', phoneNo);
@@ -44,7 +44,7 @@ const openMessageClient = (msgType: string, phoneNo: string) => {
 
 const sendEmail = (emailId?: string) => {
   if (typeof emailId === 'undefined') {
-    LoggerService.warn(CLUBHOUSE.errorsMsg.emailNotAvailable);
+    LoggerService.warn(common.errorsMsg.emailNotAvailable);
     return;
   }
   openEmailClient(emailId);
@@ -56,7 +56,7 @@ const openEmailClient = (emailId: string) => {
 
 const showDirections = (locationStr?: string) => {
   if (typeof locationStr === 'undefined') {
-    LoggerService.warn(CLUBHOUSE.errorsMsg.locationNotAvailable);
+    LoggerService.warn(common.errorsMsg.locationNotAvailable);
     return;
   }
   openLocationClient(locationStr);
@@ -72,7 +72,7 @@ const openLocationClient = (locationStr: string) => {
 
 const sendWhatsAppTextMessage = (phoneNo?: string) => {
   if (typeof phoneNo === 'undefined') {
-    LoggerService.warn(CLUBHOUSE.errorsMsg.phoneNotAvailable);
+    LoggerService.warn(common.errorsMsg.phoneNotAvailable);
     return;
   }
   openWhatsAppMessageClient('text', phoneNo);

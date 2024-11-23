@@ -8,8 +8,8 @@ import {
   DARK_BLUE_COLOR_THEME,
   DARK_ORANGE_COLOR_THEME,
   ORANGE_COLOR_THEME,
-} from '$clubhouse/constants/colors.constants';
-import {COMMON} from '$clubhouse/constants/strings.constants';
+} from '$common/constants/colors.constants';
+import {COMMON} from '$common/constants/strings.constants';
 import {DefaultTheme, MD3DarkTheme, MD3LightTheme} from 'react-native-paper';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
 
