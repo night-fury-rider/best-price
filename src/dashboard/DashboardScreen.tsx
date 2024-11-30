@@ -10,10 +10,7 @@ import {
 import Card from '$common/components/card/Card';
 import {DASHBOARD} from '$common/constants/strings.constants';
 import {ICard} from './dashboard.types';
-import {
-  BLUE_COLOR_THEME,
-  DARK_BLUE_COLOR_THEME,
-} from '$common/constants/colors.constants';
+import {LIGHT_COLORS, DARK_COLORS} from '$common/constants/colors.constants';
 
 const DashboardScreen = () => {
   const theme = useTheme();
@@ -72,14 +69,14 @@ const DashboardScreen = () => {
             {
               backgroundColor: theme.dark
                 ? theme.colors.surface
-                : BLUE_COLOR_THEME.background4,
+                : LIGHT_COLORS.background4,
               elevation: 1,
             },
             isBestPriceCard(index)
               ? {
                   backgroundColor: theme.dark
-                    ? DARK_BLUE_COLOR_THEME.background9
-                    : BLUE_COLOR_THEME.background9,
+                    ? DARK_COLORS.background10
+                    : LIGHT_COLORS.background10,
                 }
               : {},
           ]}
@@ -87,7 +84,7 @@ const DashboardScreen = () => {
             {
               backgroundColor: theme.dark
                 ? theme.colors.surfaceVariant
-                : BLUE_COLOR_THEME.background1,
+                : LIGHT_COLORS.background1,
             },
           ]}
           key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
