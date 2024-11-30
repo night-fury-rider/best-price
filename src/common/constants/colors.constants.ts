@@ -8,7 +8,17 @@ export const COLORS = {
 };
 
 export const LIGHT_COLORS = {
-  danger1: '#D63D39',
+  background1: '#f8f9fd', // Main background color of app
+  background2: '#dce8f4', // Dashboard --> Searchbar background color
+  background3: '#d0e4ff', // Dashboard --> + icon background color
+  background4: '#e6edfd', // Bottom tab background color
+  background5: '#6a8edb', // Bottom tab active tab background color
+  background6: '#0061a2', // Dashboard --> No items --> Icon of Phone
+  background7: '#f8f9fe', // Add/Edit Item --> Background color
+  background8: '#f0f4ff', // Item Details --> Tile Background color
+  background9: '#f5f5f5', // Background of Menu item of Settings Screen.
+
+  danger1: '#d63d39',
   danger2: 'red',
   danger3: 'red',
 
@@ -31,14 +41,10 @@ export const BLUE_COLOR_THEME = {
   background2: '#dce8f4', // Dashboard --> Searchbar background color
   background3: '#d0e4ff', // Dashboard --> + icon background color
   background4: '#e6edfd', // Bottom tab background color
-  background5: '#0061a2', // Bottom tab active tab background color
+  background5: '#6a8edb', // Bottom tab active tab background color
   background6: '#0061a2', // Dashboard --> No items --> Icon of Phone
-  // Tools --> Import Item --> Import Button's background (When enabled)
-
   background7: '#f8f9fe', // Add/Edit Item --> Background color
-
   background8: '#f0f4ff', // Item Details --> Tile Background color
-  background9: '#4A90E2',
 
   text1: '#1e1b16', // Main Text color
 };
@@ -61,6 +67,7 @@ export const ORANGE_COLOR_THEME = {
 };
 
 export const DARK_COLORS = {
+  background9: '#8D8D8D', // Background of Menu item of Settings Screen.
   danger1: '#fd5c63',
   danger2: 'red',
   danger3: 'red',
@@ -92,7 +99,6 @@ export const DARK_COLORS = {
 
 export const DARK_BLUE_COLOR_THEME = {
   ...DARK_COLORS,
-  background9: '#4E2A2A',
 };
 
 export const DARK_ORANGE_COLOR_THEME = {
