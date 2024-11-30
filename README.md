@@ -8,7 +8,8 @@ This app has the following features:
 ✔️ Highlight the best price combination available.
 </pre>
 <p >
-  <pre><img src="https://github.com/user-attachments/assets/8eee76de-c13e-433a-a92f-0b9b5a842d52" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/cde04cee-195c-428c-895d-04ec3fb6df87" width="200" height="400" alt=""/></pre>
+  <pre><img src="https://github.com/user-attachments/assets/57d9166e-2c5c-4edb-add3-d4dbe7a5f32a" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/5a050c42-14ea-4b49-bdaa-a8648734e9e3" width="200" height="400" alt=""/></pre>
+ 
 </p>
 
 ---
