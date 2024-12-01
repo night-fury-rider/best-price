@@ -54,11 +54,16 @@ yarn android
 
 ---
 
-# Publishing to Play Store
+
+# Create the release build
 
 https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
 
----
+--- 
 
-## Deploying the Release Build
+
+# Deploy the App on Play Store
+
 https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
+
+--- 
