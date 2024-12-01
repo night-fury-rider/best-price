@@ -16,9 +16,17 @@ This app has the following features:
  
 # Technologies and Libraries Used
 
-- [React Native 0.72.4](https://reactnative.dev/)
-- [React 18.2.0](https://reactjs.org/)
-- [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
+| Library                          | Version |
+| -------------------------------- | ------- |
+| [React Native](https://reactnative.dev/)                                                                 | v0.72   | 
+| [React](https://reactjs.org/)                                                                            | v18     |
+| [React Native Paper](https://callstack.github.io/react-native-paper/)                                    | v5      |
+| [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons)                     | v10     |
+| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                                       | v2      |
+| [Babel Module Resolver](https://www.npmjs.com/package/babel-plugin-module-resolver)                      | v5      |
+
+
+
 
 ---
 
