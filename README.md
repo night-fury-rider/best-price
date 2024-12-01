@@ -8,7 +8,7 @@ This app has the following features:
 ✔️ Highlight the best price combination available.
 </pre>
 <p >
-  <pre><img src="https://github.com/user-attachments/assets/57d9166e-2c5c-4edb-add3-d4dbe7a5f32a" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/5a050c42-14ea-4b49-bdaa-a8648734e9e3" width="200" height="400" alt=""/></pre>
+  <pre><img src="https://github.com/user-attachments/assets/7583d763-245a-47df-af5c-3d6a4a13ac49" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/752e9001-18fa-4f7c-b4ec-04abfb6e2296" width="200" height="400" alt=""/></pre>
  
 </p>
 
@@ -54,11 +54,16 @@ yarn android
 
 ---
 
-# Publishing to Play Store
+
+# Create the release build
 
 https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
 
----
+--- 
 
-## Deploying the Release Build
+
+# Deploy the App on Play Store
+
 https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
+
+--- 
