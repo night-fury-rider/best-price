@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface PriceComparatorTests : XCTestCase
+@interface BestPriceTests : XCTestCase
 
 @end
 
-@implementation PriceComparatorTests
+@implementation BestPriceTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
