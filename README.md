@@ -18,7 +18,7 @@ This app has the following features:
 
 | Library                          | Version |
 | -------------------------------- | ------- |
-| [React Native](https://reactnative.dev/)                                                                 | v0.72   | 
+| [React Native](https://reactnative.dev/)                                                                 | v0.75   | 
 | [React](https://reactjs.org/)                                                                            | v18     |
 | [React Native Paper](https://callstack.github.io/react-native-paper/)                                    | v5      |
 | [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons)                     | v10     |
