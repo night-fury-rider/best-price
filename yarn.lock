@@ -4162,7 +4162,7 @@ __metadata:
     react: "npm:18.3.1"
     react-native: "npm:0.75.2"
     react-native-device-info: "npm:10.12.0"
-    react-native-mmkv: "npm:2.10.2"
+    react-native-mmkv: "npm:2.11.0"
     react-native-paper: "npm:5.12.5"
     react-native-safe-area-context: "npm:4.10.4"
     react-native-vector-icons: "npm:10.1.0"
@@ -8849,13 +8849,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-mmkv@npm:2.10.2":
-  version: 2.10.2
-  resolution: "react-native-mmkv@npm:2.10.2"
+"react-native-mmkv@npm:2.11.0":
+  version: 2.11.0
+  resolution: "react-native-mmkv@npm:2.11.0"
   peerDependencies:
     react: "*"
     react-native: ">=0.71.0"
-  checksum: 10c0/b11c90894edd140e582bbc72687c71a48f2562359d4f1f0826ac81e6f1b0aa73b316e47f0399bd29dfd10ef23d1d6657b320eeec627b8f23dcce879ddc2de188
+  checksum: 10c0/835626215db96509d46a845012e4a2510f126604ba3d4df7b5edff49fdb7af6e5d01ad16b3f760126145099fd647328d6229bbe91f2408768da1964af32afadc
   languageName: node
   linkType: hard
 
