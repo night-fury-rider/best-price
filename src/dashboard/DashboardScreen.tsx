@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useTheme} from 'react-native-paper';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import {
   getInitialCards,
@@ -50,47 +51,49 @@ const DashboardScreen = () => {
     bestPriceIndices.includes(cardIndex);
 
   return (
-    <View style={[styles.container, {backgroundColor: theme.colors.surface}]}>
-      {cards.map((cardObj, index) => (
-        <Card
-          firstInputTitle={DASHBOARD.price}
-          firstInputValue={cardObj.price.value}
-          handleFirstInputChange={val => {
-            handlePriceChange(index, Number(val));
-          }}
-          secondInputTitle={DASHBOARD.quantity}
-          secondInputValue={cardObj.quantity.value}
-          handleSecondInputChange={val => {
-            handleQuantityChange(index, Number(val));
-          }}
-          footerSubtitle={`${cardObj.rate.value}`}
-          footerTitle={DASHBOARD.rate}
-          customContainerStyle={[
-            {
-              backgroundColor: theme.dark
-                ? theme.colors.surface
-                : LIGHT_COLORS.background4,
-              elevation: 1,
-            },
-            isBestPriceCard(index)
-              ? {
-                  backgroundColor: theme.dark
-                    ? DARK_COLORS.background10
-                    : LIGHT_COLORS.background10,
-                }
-              : {},
-          ]}
-          customInputStyle={[
-            {
-              backgroundColor: theme.dark
-                ? theme.colors.surfaceVariant
-                : LIGHT_COLORS.background1,
-            },
-          ]}
-          key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
-        />
-      ))}
-    </View>
+    <SafeAreaView>
+      <View style={[styles.container, {backgroundColor: theme.colors.surface}]}>
+        {cards.map((cardObj, index) => (
+          <Card
+            firstInputTitle={DASHBOARD.price}
+            firstInputValue={cardObj.price.value}
+            handleFirstInputChange={val => {
+              handlePriceChange(index, Number(val));
+            }}
+            secondInputTitle={DASHBOARD.quantity}
+            secondInputValue={cardObj.quantity.value}
+            handleSecondInputChange={val => {
+              handleQuantityChange(index, Number(val));
+            }}
+            footerSubtitle={`${cardObj.rate.value}`}
+            footerTitle={DASHBOARD.rate}
+            customContainerStyle={[
+              {
+                backgroundColor: theme.dark
+                  ? theme.colors.surface
+                  : LIGHT_COLORS.background4,
+                elevation: 1,
+              },
+              isBestPriceCard(index)
+                ? {
+                    backgroundColor: theme.dark
+                      ? DARK_COLORS.background10
+                      : LIGHT_COLORS.background10,
+                  }
+                : {},
+            ]}
+            customInputStyle={[
+              {
+                backgroundColor: theme.dark
+                  ? theme.colors.surfaceVariant
+                  : LIGHT_COLORS.background1,
+              },
+            ]}
+            key={`card_${cardObj.price}_${cardObj.quantity}_${cardObj.rate}_${index}`}
+          />
+        ))}
+      </View>
+    </SafeAreaView>
   );
 };
 
