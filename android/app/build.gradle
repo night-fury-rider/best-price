@@ -79,7 +79,7 @@ android {
 
     def versionMajor = 0
     def versionMinor = 0
-    def versionPatch = 6
+    def versionPatch = 7
     def versionBuild = 0 // version bump for public betas
 
     namespace "com.yuvrajpatil.apps.comparators.price"
