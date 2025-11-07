@@ -51,6 +51,7 @@ function App() {
               ? theme.colors.surface
               : LIGHT_COLORS.background3,
           }}
+          keyboardHidesNavigationBar={false}
         />
       </SafeAreaProvider>
     </ErrorBoundary>
