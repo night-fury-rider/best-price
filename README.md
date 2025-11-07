@@ -13,20 +13,17 @@ This app has the following features:
 </p>
 
 ---
- 
+
 # Technologies and Libraries Used
 
-| Library                          | Version |
-| -------------------------------- | ------- |
-| [React Native](https://reactnative.dev/)                                                                 | v0.75   | 
-| [React](https://reactjs.org/)                                                                            | v18     |
-| [React Native Paper](https://callstack.github.io/react-native-paper/)                                    | v5      |
-| [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons)                     | v10     |
-| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                                       | v2      |
-| [Babel Module Resolver](https://www.npmjs.com/package/babel-plugin-module-resolver)                      | v5      |
-
-
-
+| Library                                                                              | Version |
+| ------------------------------------------------------------------------------------ | ------- |
+| [React Native](https://reactnative.dev/)                                             | v0.82   |
+| [React](https://reactjs.org/)                                                        | v19     |
+| [React Native Paper](https://callstack.github.io/react-native-paper/)                | v5      |
+| [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons) | v10     |
+| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                   | v4      |
+| [Babel Module Resolver](https://www.npmjs.com/package/babel-plugin-module-resolver)  | v5      |
 
 ---
 
@@ -62,16 +59,14 @@ yarn android
 
 ---
 
-
 # Create the release build
 
 https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
 
---- 
-
+---
 
 # Deploy the App on Play Store
 
 https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
 
---- 
+---
