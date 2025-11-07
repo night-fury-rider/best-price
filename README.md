@@ -37,7 +37,7 @@ This app has the following features:
 ## Install the app on the mobile device
 
 ```
-yarn android
+npm run android
 ```
 
 ## Enable Wireless hot reload
@@ -48,7 +48,7 @@ yarn android
 - Install the app
 
 ```
-yarn android
+npm run android
 ```
 
 - Disconnect the mobile from USB. Metro Bundler will be disconnected.
