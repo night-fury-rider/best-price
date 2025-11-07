@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+import pkg from '../../package.json';
 import {Card, Text, IconButton, Provider, useTheme} from 'react-native-paper';
 
 import {DARK_COLORS, LIGHT_COLORS} from '$common/constants/colors.constants';
@@ -27,7 +27,7 @@ const SettingsScreen: React.FC = () => {
               iconColor={theme.colors.primary}
             />
             <Text style={styles.rowText}>{SETTINGS.appVersion}</Text>
-            <Text style={styles.rowText}>{DeviceInfo.getVersion()}</Text>
+            <Text style={styles.rowText}>{pkg.version}</Text>
           </View>
         </Card>
       </View>
