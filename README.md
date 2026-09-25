@@ -31,13 +31,41 @@ This app has the following features:
 
 ## Prerequisite
 
-- The mobile with USB debugging enabled
-- The mobile and laptop are on the same Wi-Fi network.
+| Tool             | Version    |
+| ---------------- | ---------- |
+| Node.js          | >= 22.13.0 |
+| React Native CLI | Latest     |
+| Android Studio   | Latest     |
+| JDK              | 17         |
 
-## Install the app on the mobile device
+# Install dependencies
+
+```
+npm i
+```
+
+## Install the app
 
 ```
 npm run android
+```
+
+# Create the dev build
+
+```
+npm run mode:test
+```
+
+# Create the prod build
+
+```
+npm run mode:prod
+```
+
+### Export Source Files to build_src
+
+```
+npm run export-src
 ```
 
 ## Enable Wireless hot reload
