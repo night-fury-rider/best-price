@@ -88,13 +88,14 @@ npm run android
 ---
 
 # Create the release build
-
 https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
 
 ---
 
 # Deploy the App on Play Store
-
 https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
 
 ---
+
+# Troubleshooting
+https://github.com/night-fury-rider/react-native-template/wiki/Troubleshooting
