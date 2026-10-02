@@ -53,8 +53,8 @@ This app has the following features:
 ### Installation
 
 ```bash
-git clone https://github.com/night-fury-rider/star-vault-app.git
-cd star-vault
+git clone https://github.com/night-fury-rider/best-price.git
+cd best-price
 npm install
 ```
 
